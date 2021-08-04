@@ -211,6 +211,7 @@ minetest.register_globalstep(function(dtime)
         end
     end
     for i = 1, #wisp.jars do
+        if not wisp.jars[i] then return end
         local pos = wisp.jars[i].pos
         if minetest.get_node(pos).name == "ignore"
         or minetest.get_node(pos).name:match("^wisp:jar_") then
